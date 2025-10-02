@@ -1,1 +1,117 @@
-Weddings Invitations
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Convite Digital | ZamRiverTech</title>
+  <link rel="icon" href="./img/favicon.png" type="image/png" />
+  <meta name="theme-color" content="#ffffff" />
+  <style>
+    :root {
+      --color-bg: #ffffff;
+      --color-text: #1a1a1a;
+      --color-accent: #282c86;
+      --font-family: 'Segoe UI', Roboto, sans-serif;
+    }
+    body {
+      margin: 0;
+      font-family: var(--font-family);
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header, footer {
+      padding: 1rem;
+      background-color: #f5f5f5;
+      text-align: center;
+    }
+    main {
+      flex: 1;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .btn-primary {
+      background-color: var(--color-accent);
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 1rem;
+      margin-top: 1.5rem;
+      transition: .5s all ease;
+    }
+    .btn-primary:hover {
+      background-color: #0c1650;
+    }
+    ul.invite-list {
+      list-style: none;
+      padding: 0;
+    }
+    ul.invite-list li {
+      margin: 0.5rem 0;
+    }
+    ul.invite-list a {
+      color: var(--color-accent);
+      text-decoration: none;
+    }
+    ul.invite-list a:hover {
+      text-decoration: underline;
+    }
+    .logo {
+      max-width: 120px;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="./img/logo.png" alt="Logo Convite Digital" class="logo" />
+  </header>
+  <main>
+    <section>
+      <h2>Convites Digitalizados via Link</h2>
+      <p>Envie convites personalizados para convidados selecionados.  
+      Gerencie tudo de forma prática com planilhas online, garantindo segurança e privacidade.</p>
+      <br>
+      <a class="btn-primary" href="https://wa.me/258871838719" target="_blank">WhatsApp!</a>
+    </section>
+    <section>
+      <br>
+      <ul class="invite-list" id="inviteList">
+        <!-- Links para exemplos de convites (se público) -->
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <small>&copy; 2025 Zambezi River Services. Todos os direitos reservados.</small>
+  </footer>
+  <script>
+    async function loadInvites() {
+      try {
+        const response = await fetch('invites.json');
+        const invites = await response.json();
+        const list = document.getElementById('inviteList');
+        invites.forEach(invite => {
+          const li = document.createElement('li');
+          const a = document.createElement('a');
+          a.href = invite.path;
+          a.textContent = invite.name;
+          li.appendChild(a);
+          list.appendChild(li);
+        });
+      } catch (error) {
+        console.warn('Convites não estão disponíveis publicamente.');
+      }
+    }
+    loadInvites();
+  </script>
+</body>
+</html>

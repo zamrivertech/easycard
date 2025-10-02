@@ -6,6 +6,7 @@
   <link rel="icon" type="image/png" href="./img/favicon.jpg"/>
   <title>Convite</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes');
     body {
       margin: 0;
       font-family: 'Georgia', serif;
@@ -21,14 +22,13 @@
       width: 600px;
       padding: 60px 40px;
       background: white;
-      border-radius: 12px;
       box-shadow: 0 0 30px rgba(0,0,0,0.1);
       text-align: center;
       animation: fadeIn 2s ease-in;
       margin: 0 2.5rem;
     }
 
-    .floral-top-left, .floral-bottom-right {
+    .floral-top-left, .floral-top-right, .floral-bottom-right, .floral-bottom-left {
       position: absolute;
       width: 120px;
       height: 120px;
@@ -37,32 +37,46 @@
     }
 
     .floral-top-left {
-      top: -20px;
-      left: -40px;
+      top: 0px;
+      left: -10px;
+    }
+
+    .floral-top-right {
+      top: 0px;
+      right: 20px;
+    }
+
+    .floral-top-right img {
+      transform: rotate(180deg);
     }
 
     .floral-bottom-right {
-      bottom: -40px;
-      right: 40px;
+      bottom: 30px;
+      right: -10px;
+    }
+
+    .floral-bottom-left {
+      bottom: 16px;
+      left: 0px;
     }
 
     .floral-bottom-right img {
-      transform: scaleX(-1);
+      transform: rotate(180deg);
     }
 
     h1 {
-      font-size: 1rem;
-      color: #777;
-      margin-bottom: 10px;
-      animation: fadeInText 2s ease-in;
+      font-weight: normal;
     }
 
     .name {
-      font-size: 1.4rem;
       font-weight: bold;
-      color: #333;
-      margin-bottom: 20px;
-      animation: fadeInText 1.5s ease-in;
+    }
+
+    h1, .name{
+      font-size: 1rem;
+      color: #777;
+      margin-bottom: 6px;
+      animation: fadeInText .5s ease-in;
     }
 
     .details {
@@ -73,9 +87,10 @@
     }
 
     .couple {
-      font-size: 2.8rem;
-      font-family: 'Brush Script MT', cursive;
-      color: #c94f7c;
+      font-size: 2.6rem;
+      font-family: 'Great Vibes', cursive;
+      font-weight: 500;
+      color: #71986f;
       margin: 20px 0;
       animation: fadeInText .5s ease-in;
     }
@@ -93,6 +108,76 @@
     #weddingDetails {
       display: none;
     }
+
+    .info {
+      color: #555;
+      display: flex;
+      flex-direction: column;
+      gap: .7rem;
+      align-items: center;
+      animation: fadeInText 1s ease-in;
+    }
+
+    .info .middle-a {
+      margin-right: 60px;
+      display: flex;
+      max-width: 200px;
+      justify-content: space-around;
+      align-items: center;
+      gap: 1.4rem;
+    }
+
+    .info .middle-a .border {
+      border: #555 1px solid;
+      height: 40px;
+    }
+
+    .info .middle-a .b {
+      font-size: 2rem;
+      padding-bottom: 16px;
+    }
+
+    .info .middle-b {
+      font-size: 1.5rem;
+    }
+
+    .info .bottom {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .parents .info {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .parents {
+      color: #555;
+    }
+
+    .parents .info .him, .parents .info .her {
+      font-size: .95rem;
+    }
+
+    .middle-c {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      font-size: .85rem;
+    }
+
+    .middle-c .event {
+      font-weight: bold;
+    }
+
+    .middle-c .location {
+      font-style: italic;
+      font-weight: normal;
+    }
+
+    
 
     @keyframes fadeIn {
       from { opacity: 0; transform: scale(0.95); }
@@ -112,20 +197,56 @@
 </head>
 <body>
   <div class="invitation-wrapper">
-    <div class="floral-top-left"><img src="./img/flowers.png" width="200px"></div>
-    <div class="floral-bottom-right"><img src="./img/flowers.png" width="200px"></div>
+    <div class="floral-top-left"><img src="./img/a.png" width="100px"></div>
+    <div class="floral-top-right"><img src="./img/b.png" width="140px"></div> 
+    <div class="floral-bottom-left"><img src="./img/b.png" width="140px"></div> 
+    <div class="floral-bottom-right"><img src="./img/a.png" width="100px"></div>       
 
-    <h1>CONVITE PARA</h1>
+    <h1>Temos a honra de convidar <br><span class="name"></span></h1>
+
     <div class="name"></div>
 
-    <!-- Custom message will be injected here -->
     <div id="weddingDetails">
-      <div class="details">É com grande alegria que convidamos para o casamento de</div>
+      <div class="details">para celebrar a união de</div>
+      
       <div class="couple">Lenine Culemedzana &<br>Assinate Windo</div>
-      <div class="details">
-        13 de Dezembro, 2025<br>
-        Mpadue, Fauzia's Bar.<br>
+
+      <div class="parents">
+        <p>com a bênção de Deus e de seus pais:</p>
+        <div class="info">
+          <div class="her">
+            <div>Jose Windo</div>
+            <div>Tania Machipissa</div>
+          </div>
+          <div class="him">
+            <div>Basilio Tumbude</div>
+            <div>Laurinda Chiganda</div>
+          </div>
+        </div>
+
       </div>
+
+      <div class="info">
+        <div class="top">DEZEMBRO</div>
+        <div class="middle-a">
+          <div class="a">SÁBADO</div>
+          <div class="border"></div>
+          <div class="b">13</div>
+          <div class="border"></div>
+          <div class="c">2025</div>
+        </div>
+        <div class="middle-b"></div>
+        <div class="middle-c">
+          <div class="event">CELEBRAÇÃO DO CASAMENTO: IGREJA PENIEL INTERNACIONAL TETE</div>
+          <div class="location">Av. Julius Nyerere (No Clube de Chingale, Perto do Kasekome, Frente da Bomba Petromoc) - <b>13:00H<b></div>
+          <div class="event">CERIMÔNIA DO COPO D’ÁGUA: FAUZIA'S BAR</div>
+          <div class="location"> Mpadue - <b>16:00H</b></div>          
+        </div>
+        <div class="bottom"></div>
+      </div>
+
+    </div>
+
     </div>
   </div>
 
@@ -161,7 +282,7 @@
           weddingDetails.style.display = "block";
         }
       } catch (err) {
-        wrapper.innerHTML = `<h2 style="color:#a00;">Erro ao carregar</h2><p>Não foi possível verificar seu convite. Tente novamente mais tarde.</p>`;
+        wrapper.innerHTML = `<h2 style="color:#a00;">Erro ao carregar!</h2><p>Não foi possível verificar o convite. Tente novamente mais tarde.</p>`;
       }
     }
 
