@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/png" href="./img/favicon.jpg"/>
+  <title>Invitation</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes');
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background: #fdfaf6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .invitation-wrapper {
+      position: relative;
+      width: 600px;
+      padding: 60px 40px;
+      background: white;
+      box-shadow: 0 0 30px rgba(0,0,0,0.1);
+      text-align: center;
+      animation: fadeIn 2s ease-in;
+      margin: 0 2.5rem;
+    }
+    .floral-top-left, .floral-top-right, .floral-bottom-right, .floral-bottom-left {
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      opacity: 0.9;
+      animation: fadeInImage 2s ease-in;
+    }
+    .floral-top-left { top: 0px; left: -10px; }
+    .floral-top-right { top: 0px; right: 20px; }
+    .floral-top-right img { transform: rotate(180deg); }
+    .floral-bottom-right { bottom: 30px; right: -10px; }
+    .floral-bottom-left { bottom: 16px; left: 0px; }
+    .floral-bottom-right img { transform: rotate(180deg); }
+    h1 { font-weight: normal; }
+    h1 span {
+      display: inline-block;
+      padding-top: .6rem;
+      font-weight: bold;
+    }
+    h1, span { font-size: 1rem; color: #777; animation: fadeInText .5s ease-in; }
+    .details { font-size: 1rem; color: #555; margin-top: 6px; animation: fadeInText 1s ease-in; }
+    .couple {
+      font-size: 2.6rem;
+      font-family: 'Great Vibes', cursive;
+      font-weight: 500;
+      color: #71986f;
+      margin: 20px 0;
+      animation: pulse 3s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.95; transform: scale(1.02); }
+    }
+    #weddingDetails { display: none; }
+    .info {
+      color: #555;
+      display: flex;
+      flex-direction: column;
+      gap: .7rem;
+      align-items: center;
+      animation: fadeInText 1s ease-in;
+    }
+    .info .middle-a {
+      margin-right: 60px;
+      display: flex;
+      max-width: 200px;
+      justify-content: space-around;
+      align-items: center;
+      gap: 1rem;
+    }
+    .info .middle-a .border { border: #555 1px solid; height: 40px; }
+    .info .middle-a .b { font-size: 2rem; padding-bottom: 16px; }
+    .info .middle-b { font-size: 1.5rem; }
+    .info .bottom { font-size: 1.2rem; font-weight: bold; }
+    .parents .info {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .parents { color: #555; }
+    .parents p, .parents .info .him, .parents .info .her { font-size: .8rem; }
+    .middle-c {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      font-size: .85rem;
+    }
+    .middle-c .event { font-weight: bold; }
+    .middle-c .location { font-style: italic; font-weight: normal; }
+    @keyframes fadeIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+    @keyframes fadeInText { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes fadeInImage { from { opacity: 0; transform: scale(0.8); } to { opacity: 0.9; transform: scale(1); } }
+  </style>
+</head>
+<body>
+  <div class="invitation-wrapper">
+    <div class="floral-top-left"><img src="./img/a.png" width="100px"></div>
+    <div class="floral-top-right"><img src="./img/b.png" width="140px"></div> 
+    <div class="floral-bottom-left"><img src="./img/b.png" width="140px"></div> 
+    <div class="floral-bottom-right"><img src="./img/a.png" width="100px"></div>       
+
+    <h1><div style="font-size: .8rem;margin-bottom: .8rem;">"And above all these things put on love, which is the bond of perfection." 
+        <br>Colossians 3:14</div>
+        We have the honor of inviting <br><span class="name"></span></h1>
+
+    <div id="weddingDetails">
+      <div class="details">For the Wedding of</div>
+      <div class="couple">Assinate Windo &<br>Lenine Culemedzana</div>
+      <div class="parents">
+        <p>With the Blessing of God and their Parents:</p>
+        <div class="info">
+          <div class="her">
+            <div>Jose Windo</div>
+            <div>Tania Machipissa</div>
+          </div>
+          <div class="him">
+            <div>Basilio Tumbude</div>
+            <div>Laurinda Chiganda</div>
+          </div>
+        </div>
+      </div>
+      <div class="info">
+        <div class="middle-a">
+          <div class="a">SATURDAY</div>
+          <div class="border"></div>
+          <div class="b">13/12</div>
+          <div class="border"></div>
+          <div class="c">2025</div>
+        </div>
+        <div class="middle-c">
+          <div class="event">WEDDING CELEBRATION: PENIEL INTERNATIONAL CHURCH TETE</div>
+          <div class="location">Av. Julius Nyerere (At Chingale Club, Near Kasekome, In front of Petromoc Station) - <b>1:00 PM</b></div>
+          <div class="event">WATER CUP CEREMONY: FAUZIA'S BAR</div>
+          <div class="location">Mpadue - <b>4:00 PM</b></div>          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    async function loadGuestData() {
+      const params = new URLSearchParams(window.location.search);
+      const code = params.get("code");
+      const wrapper = document.querySelector(".invitation-wrapper");
+      const nameEl = wrapper.querySelector(".name");
+      const weddingDetails = document.getElementById("weddingDetails");
+
+      if (!code) {
+        wrapper.innerHTML = `<h2 style="color:#a00;">Invitation not found</h2><p>Please use the correct link to view your invitation.</p>`;
+        return;
+      }
+
+      try {
+        const response = await fetch("https://script.google.com/macros/s/AKfycbzH-rQPAPe-tyR_d3WkuF-CfEfoccfwxwLG6Uv0dnAC98QU7v8XlGpvqMd06VlksJHK/exec?code=" + code);
+        const data = await response.json();
+
+        if (data.error) {
+          wrapper.innerHTML = `<h2 style="color:#a00;">Invitation not found</h2><p>This code does not correspond to any authorized guest.</p>`;
+        } else {
+          nameEl.innerText = data.name;
+          const customMsg = document.createElement("p");
+          customMsg.innerText = data.message;
+          customMsg.style.marginTop = "10px";
+          customMsg.style.color = "#444";
+          wrapper.insertBefore(customMsg, weddingDetails);
+          weddingDetails.style.display = "block";
+        }
+      } catch (err) {
+        wrapper.innerHTML = `<h2 style="color:#a00;">Error loading!</h2><p>Unable to verify the invitation. Please try again later.</p>`;
+      }
+    }
+    window.onload = loadGuestData;
+  </script>
+</body>
+</html>
