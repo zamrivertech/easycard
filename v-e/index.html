@@ -672,30 +672,6 @@
       Será uma honra compartilhar esse momento especial ao seu
       <span class="highlight">lado!</span>
     </div>
-<!--
-    <div class="interaction">
-      Clique nos Icones para Interagir
-    </div>
-
-    <div class="actions">
-
-      <a href="#" class="action">
-        <div class="icon">📍</div>
-        <p>SALÃO DE<br>FESTAS</p>
-      </a>
-
-      <a href="#" class="action">
-        <div class="icon">✔</div>
-        <p>CONFIRMAR<br>PRESENÇA</p>
-      </a>
-
-    </div>
-
-    <div class="footer">
-      Válido para <span>01</span> Pessoa(s)
-    </div>
--->    
-
 </div>
 
 <script>
@@ -703,7 +679,7 @@
       const params = new URLSearchParams(window.location.search);
       const code = params.get("code");
 
-      const wrapper = document.querySelector(".card");
+      const wrapper = document.querySelector("body");
       const nameEl = wrapper.querySelector(".name");
 
       if (!code) {
@@ -712,7 +688,7 @@
       }
 
       try {
-        const response = await fetch("https://script.google.com/macros/s/1HBt3MSezPEyzmNvtp6xUwU-B2kibvAX-ZCFPIkIxe8o/exec?code=" + code);
+        const response = await fetch("https://script.google.com/macros/s/AKfycbz_JVyT1g9iNc9rkCq0Ki0xMgAlkqRS0krp1TZHn8A9ve4jPqAB_DRLhluk8D4KOGyv/exec?code=" + code);
         const data = await response.json();
 
         if (data.error) {
